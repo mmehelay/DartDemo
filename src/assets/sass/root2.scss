@@ -216,95 +216,10 @@
 }
 
 /*-- -------------------------- -->
-<---      Dark Mode Toggle      -->
-<--- -------------------------- -*/
-
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #dark-mode-toggle {
-            .cs-sun {
-                opacity: 1;
-                transform: translate(-50%, -50%);
-            }
-
-            .cs-moon {
-                opacity: 0;
-                transform: translate(-50%, -150%);
-            }
-        }
-    }
-
-    #dark-mode-toggle {
-        width: calc(48 / 16 * 1rem);
-        height: calc(48 / 16 * 1rem);
-        padding: 0;
-        background: transparent;
-        border: none;
-        display: block;
-        order: 2;
-        position: relative;
-        z-index: 1000;
-        overflow: hidden;
-
-        img,
-        svg {
-            width: calc(20 / 16 * 1rem);
-            height: calc(20 / 16 * 1rem);
-            //center image inside button
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-        }
-
-        .cs-moon {
-            z-index: 2;
-            // Transition properties
-            transition: transform 0.3s, opacity 0.3s;
-            fill: #1a1a1a;
-        }
-
-        .cs-sun {
-            opacity: 0;
-            z-index: 1;
-            // Transition property
-            transform: translate(-50%, 100%);
-            transition: transform 0.3s, opacity 0.3s;
-        }
-    }
-}
-
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-    #dark-mode-toggle {
-        margin-left: calc(16 / 16 * 1rem);
-        order: 3;
-        position: relative;
-        right: auto;
-        bottom: auto;
-    }
-}
-
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-    #dark-mode-toggle {
-        margin: 0;
-        position: relative;
-        right: auto;
-        bottom: auto;
-        transform: none;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-}
-
-/*-- -------------------------- -->
 <---     Mobile Navigation      -->
 <--- -------------------------- -*/
+
+
 
 /* Mobile - 1023px */
 @media only screen and (max-width: 63.9375rem) {
@@ -312,28 +227,14 @@
         &.cs-open {
             overflow: hidden;
         }
-
-        &.scroll {
-            #cs-navigation {
-                .cs-top-container {
-                    gap: 0;
-                }
-
-                .cs-top-social {
-                    height: 0;
-                    opacity: 0;
-                    visibility: hidden;
-                    overflow: hidden;
-                }
-            }
-        }
     }
 
     #cs-navigation {
         /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-        font-family: "Roboto", "Arial", sans-serif;
+        font-family: 'Roboto', 'Arial', sans-serif;
         width: 100%;
-        /* prevents padding from affecting height and width */
+        padding: calc(12 / 16 * 1rem) calc(16 / 16 * 1rem);
+        /* prevents padding and border from affecting height and width */
         box-sizing: border-box;
         background-color: #fff;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -341,19 +242,19 @@
         z-index: 10000;
 
         &:before {
-            content: "";
+            content: '';
             width: 100%;
             height: 0vh;
-            background: rgba(0, 0, 0, 0.6);
-            opacity: 0;
-            display: block;
+            background: rgba(0, 0, 0, .6);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
             position: absolute;
+            display: block;
             top: 100%;
             right: 0;
             z-index: -1100;
-            transition: height 0.5s, opacity 0.5s;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            opacity: 0;
+            transition: height .5s, opacity .5s;
         }
 
         &.cs-active {
@@ -361,76 +262,37 @@
                 height: 150vh;
                 opacity: 1;
             }
+
             .cs-ul-wrapper {
                 opacity: 1;
                 transform: scaleY(1);
-                transition-delay: 0.15s;
+                transition-delay: .15s;
             }
 
             .cs-li {
-                opacity: 1;
                 transform: translateY(0);
+                opacity: 1;
             }
-        }
-
-        .cs-top-bar {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .cs-top-container {
-            width: 100%;
-            /* prevents padding from affecting height and width */
-            box-sizing: border-box;
-            /* 16px - 20px */
-            padding: clamp(1rem, 2.5vw, 1.25rem) calc(16 / 16 * 1rem);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: calc(16 / 16 * 1rem);
-        }
-
-        .cs-contact-group {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            flex-wrap: wrap;
-            /* sends it to the right in the 2nd position */
-            order: 2;
-            gap: calc(40 / 16 * 1rem);
-        }
-
-        .cs-contact-link {
-            display: none;
         }
 
         .cs-container {
             width: 100%;
-            /* prevents padding from affecting height and width */
-            box-sizing: border-box;
-            /* 16px - 20px */
-            padding: clamp(1rem, 2.5vw, 1.25rem) calc(16 / 16 * 1rem);
-            background-color: #1a1a1a;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
-            position: relative;
         }
 
         .cs-logo {
-            width: auto;
-            /* 24px - 32px */
-            height: 80px;
+            width: 40%;
+            max-width: calc(146 / 16 * 1rem);
+            height: 100%;
             margin: 0 auto 0 0;
-            /* prevents padding from affecting height and width */
-            box-sizing: border-box;
             padding: 0;
+            /* prevents padding and border from affecting height and width */
+            box-sizing: border-box;
             display: flex;
             justify-content: center;
-            align-items: start;
-            order: 1;
+            align-items: center;
             z-index: 10;
 
             img {
@@ -441,25 +303,17 @@
             }
         }
 
-        .cs-nav {
-            order: 2;
-        }
-
         .cs-toggle {
-            /* 48px - 56px */
-            width: clamp(3rem, 7.2vw, 3.5rem);
-            height: clamp(3rem, 7.2vw, 3.5rem);
+            /* 44px - 48px */
+            width: clamp(2.75rem, 6vw, 3rem);
+            height: clamp(2.75rem, 6vw, 3rem);
             margin: 0 0 0 auto;
-            background-color: #484848;
+            border-radius: calc(4 / 16 * 1rem);
+            background-color: transparent;
             border: none;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: transform 0.6s;
-
-            &.cs-active {
-                transform: rotate(180deg);
-            }
         }
 
         .cs-active {
@@ -470,28 +324,29 @@
 
             .cs-line2 {
                 top: 50%;
-                transform: translate(-50%, -50%) translateY(0) rotate(-225deg);
                 transform-origin: center;
+                transform: translate(-50%, -50%) translateY(0) rotate(-225deg);
             }
 
             .cs-line3 {
-                opacity: 0;
                 bottom: 100%;
+                opacity: 0;
             }
         }
 
         .cs-box {
             /* 24px - 28px */
             width: clamp(1.5rem, 2vw, 1.75rem);
-            height: calc(16 / 16 * 1rem);
+            /* 14px - 16px */
+            height: clamp(.875rem, 1.5vw, 1rem);
             position: relative;
         }
 
         .cs-line {
             width: 100%;
             height: 2px;
-            background-color: #fafbfc;
             border-radius: 2px;
+            background-color: #1a1a1a;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -499,108 +354,96 @@
 
         .cs-line1 {
             top: 0;
-            transition: transform 0.5s, top 0.3s, left 0.3s;
-            animation-duration: 0.7s;
-            animation-timing-function: ease;
-            animation-direction: normal;
-            animation-fill-mode: forwards;
             transform-origin: center;
+            transition: transform .5s, top .3S, left .3S;
+            animation-duration: .7s;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+            animation-direction: normal;
         }
 
         .cs-line2 {
             top: 50%;
             transform: translateX(-50%) translateY(-50%);
-            transition: top 0.3s, left 0.3s, transform 0.5s;
-            animation-duration: 0.7s;
+            transition: top .3s, left .3s, transform .5s;
+            animation-duration: .7s;
             animation-timing-function: ease;
-            animation-direction: normal;
             animation-fill-mode: forwards;
+            animation-direction: normal;
         }
 
         .cs-line3 {
             bottom: 0;
-            transition: bottom 0.3s, opacity 0.3s;
+            transition: bottom .3s, opacity .3s;
         }
 
         .cs-ul-wrapper {
             width: 100%;
             height: auto;
             padding-bottom: calc(48 / 16 * 1rem);
+            opacity: 0;
             background-color: #fff;
             box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
-            opacity: 0;
+            overflow: hidden;
             position: absolute;
             top: 100%;
             left: 0;
             z-index: -1;
-            overflow: hidden;
             transform: scaleY(0);
-            transition: transform 0.4s, opacity 0.3s;
             transform-origin: top;
+            transition: transform .4s, opacity .3s;
         }
 
         .cs-ul {
+            margin: 0;
+            padding: calc(48 / 16 * 1rem) 0 0 0;
             width: 100%;
             height: auto;
             max-height: 65vh;
-            margin: 0;
-            padding: calc(48 / 16 * 1rem) 0 0 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
             overflow: scroll;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            align-items: center;
             gap: calc(20 / 16 * 1rem);
         }
 
         .cs-li {
+            width: 100%;
             text-align: center;
             list-style: none;
-            width: 100%;
             margin-right: 0;
-            opacity: 0;
             /* transition from these values */
-            transform: translateY(calc(-70 / 16 * 1rem));
-            transition: transform 0.6s, opacity 0.9s;
+            transform: translateY(-4.375rem);
+            opacity: 0;
+            transition: transform .6s, opacity .9s;
 
             &:nth-of-type(1) {
-                transition-delay: 0.05s;
+                transition-delay: .05s;
             }
             &:nth-of-type(2) {
-                transition-delay: 0.1s;
+                transition-delay: .1s;
             }
             &:nth-of-type(3) {
-                transition-delay: 0.15s;
+                transition-delay: .15s;
             }
             &:nth-of-type(4) {
-                transition-delay: 0.2s;
+                transition-delay: .2s;
             }
             &:nth-of-type(5) {
-                transition-delay: 0.25s;
+                transition-delay: .25s;
             }
             &:nth-of-type(6) {
-                transition-delay: 0.3s;
+                transition-delay: .3s;
             }
             &:nth-of-type(7) {
-                transition-delay: 0.35s;
+                transition-delay: .35s;
             }
             &:nth-of-type(8) {
-                transition-delay: 0.4s;
+                transition-delay: .4s;
             }
             &:nth-of-type(9) {
-                transition-delay: 0.45s;
-            }
-            &:nth-of-type(10) {
-                transition-delay: 0.5s;
-            }
-            &:nth-of-type(11) {
-                transition-delay: 0.55s;
-            }
-            &:nth-of-type(12) {
-                transition-delay: 0.6s;
-            }
-            &:nth-of-type(13) {
-                transition-delay: 0.65s;
+                transition-delay: .45s;
             }
         }
 
@@ -614,138 +457,31 @@
             display: inline-block;
             position: relative;
 
-            &.cs-active {
-                color: var(--primary);
-            }
-
-            &:hover {
-                color: var(--primary);
-            }
-        }
-
-        .cs-button-solid {
-            font-size: calc(16 / 16 * 1rem);
-            font-weight: 700;
-            /* 46px - 56px */
-            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-            text-align: center;
-            text-decoration: none;
-            min-width: calc(150 / 16 * 1rem);
-            margin: 0;
-            /* prevents padding from adding to the width */
-            box-sizing: border-box;
-            padding: 0 calc(24 / 16 * 1rem);
-            color: #1a1a1a;
-            background-color: var(--primary);
-            display: inline-block;
-            position: relative;
-            z-index: 1;
-            transition: color 0.3s;
-
             &:before {
-                content: "";
-                width: 0%;
-                height: 100%;
-                background: #000;
+                /* active state underline */
+                content: '';
+                width: 100%;
+                height: 1px;
+                background: currentColor;
                 opacity: 1;
                 position: absolute;
-                top: 0;
+                display: none;
+                bottom: calc(-2 / 16 * 1rem);
                 left: 0;
-                z-index: -1;
-                transition: width 0.3s;
             }
 
-            &:hover {
-                color: #fff;
+            &.cs-active {
                 &:before {
-                    width: 100%;
+                    display: block;
                 }
             }
         }
 
         .cs-button-solid {
-            margin: 0;
             display: none;
         }
-
-        .cs-call {
-            text-decoration: none;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            position: relative;
-            gap: calc(16 / 16 * 1rem);
-
-            &:before {
-                /* light green circle that animates on hover */
-                content: "";
-                width: calc(48 / 16 * 1rem);
-                height: calc(48 / 16 * 1rem);
-                background: #eff1f0;
-                opacity: 1;
-                border-radius: calc(24 / 16 * 1rem);
-                display: block;
-                position: absolute;
-                top: 50%;
-                left: 0;
-                z-index: -1;
-                transform: translateY(-50%);
-                transition: width 0.3s, height 0.3s, border-radius 0.3s;
-            }
-
-            .cs-wrapper {
-                width: calc(56 / 16 * 1rem);
-                height: calc(56 / 16 * 1rem);
-                background-color: var(--primary);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transition: transform 0.3s;
-                /* prevents flexbox from squishing it */
-                flex: none;
-            }
-
-            .cs-icon {
-                width: calc(24 / 16 * 1rem);
-                height: auto;
-                display: block;
-                transition: transform 0.3s;
-            }
-
-            .cs-info {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .cs-header {
-                font-size: calc(14 / 16 * 1rem);
-                font-weight: 400;
-                line-height: 1.2em;
-                margin: 0;
-                color: var(--bodyTextColorWhite);
-                display: block;
-            }
-
-            .cs-link-content {
-                font-size: calc(20 / 16 * 1rem);
-                font-weight: 700;
-                line-height: 1.2em;
-                margin: 0;
-                color: var(--bodyTextColorWhite);
-                display: block;
-            }
-        }
     }
-}
 
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-    #cs-navigation {
-        .cs-button-solid {
-            display: block;
-        }
-    }
 }
 
 /*-- -------------------------- -->
@@ -756,181 +492,23 @@
 @media only screen and (min-width: 64rem) {
     #cs-navigation {
         /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-        font-family: "Roboto", "Arial", sans-serif;
+        font-family: 'Roboto', 'Arial', sans-serif;
         width: 100%;
-        /* prevents padding from affecting height and width */
+        padding: calc(16 / 16 * 1rem);
+        /* prevents padding and border from affecting height and width */
         box-sizing: border-box;
-        padding: 0;
         background-color: #fff;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         position: fixed;
         z-index: 10000;
 
-        .cs-top-bar {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .cs-top-container {
-            width: 100%;
-            max-width: calc(1280 / 16 * 1rem);
-            /* prevents padding from affecting height and width */
-            box-sizing: border-box;
-            padding: calc(16 / 16 * 1rem);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: calc(24 / 16 * 1rem);
-        }
-
-        .cs-contact-group {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: calc(24 / 16 * 1rem);
-        }
-
-        .cs-contact-link {
-            text-decoration: none;
-            padding-right: calc(30 / 16 * 1rem);
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            position: relative;
-            transform-style: preserve-3d;
-            perspective: 200px;
-            gap: calc(16 / 16 * 1rem);
-
-            &:nth-of-type(2) {
-                display: none;
-            }
-
-            &:hover {
-                .cs-wrapper {
-                    transform: rotateY(180deg);
-                }
-            }
-        }
-
-        .cs-wrapper {
-            width: calc(56 / 16 * 1rem);
-            height: calc(56 / 16 * 1rem);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-            transition: transform 0.6s;
-            /* prevents flexbox from squishing it */
-            flex: none;
-
-            &:before {
-                /* backgorund color in pseudo so we can use the primary color variable and use opacity */
-                content: "";
-                width: 100%;
-                height: 100%;
-                background-color: var(--primary);
-                opacity: 0.1;
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-        }
-
-        .cs-icon {
-            width: calc(24 / 16 * 1rem);
-            height: auto;
-            display: block;
-            transition: transform 0.3s;
-        }
-
-        .cs-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: calc(4 / 16 * 1rem);
-        }
-
-        .cs-header {
-            font-size: calc(16 / 16 * 1rem);
-            font-weight: 700;
-            line-height: 1.2em;
-            margin: 0;
-            color: var(--headerColor);
-            display: block;
-        }
-
-        .cs-link-content {
-            font-size: calc(14 / 16 * 1rem);
-            font-weight: 400;
-            line-height: 1.2em;
-            margin: 0;
-            color: var(--bodyTextColor);
-            display: block;
-        }
-
-        .cs-button-solid {
-            font-size: calc(16 / 16 * 1rem);
-            font-weight: 700;
-            /* 46px - 56px */
-            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-            text-align: center;
-            text-decoration: none;
-            min-width: calc(150 / 16 * 1rem);
-            margin: 0;
-            /* prevents padding from adding to the width */
-            box-sizing: border-box;
-            padding: 0 calc(48 / 16 * 1rem);
-            color: #1a1a1a;
-            background-color: var(--primary);
-            display: inline-block;
-            position: relative;
-            z-index: 1;
-            transition: color 0.3s;
-
-            &:before {
-                content: "";
-                width: 0%;
-                height: 100%;
-                background: #000;
-                opacity: 1;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                transition: width 0.3s;
-            }
-
-            &:hover {
-                color: #fff;
-                &:before {
-                    width: 100%;
-                }
-            }
-        }
-
-        .cs-bottom-bar {
-            width: 100%;
-            background-color: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
         .cs-container {
             width: 100%;
             max-width: calc(1280 / 16 * 1rem);
             margin: auto;
-            /* prevents padding from affectin gheight */
-            box-sizing: border-box;
-            padding: 0 calc(16 / 16 * 1rem);
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
-            position: relative;
             gap: calc(24 / 16 * 1rem);
         }
 
@@ -939,9 +517,9 @@
         }
 
         .cs-logo {
-            width: 100%;
-            max-width: calc(197 / 16 * 1rem);
-            height: calc(60 / 16 * 1rem);
+            width: 18.4%;
+            max-width: calc(350 / 16 * 1rem);
+            height: calc(65 / 16 * 1rem);
             /* margin-right auto pushes everything away from it to the right */
             margin: 0 auto 0 0;
             padding: 0;
@@ -952,7 +530,7 @@
 
             img {
                 width: 150%;
-                height: 150%;
+                height: 120%;
                 /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
                 object-fit: contain;
             }
@@ -965,125 +543,94 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            gap: calc(36 / 16 * 1rem);
+            /* 20px - 36px */
+            gap: clamp(1.25rem, 2.6vw, 2.25rem);
         }
 
         .cs-li {
             list-style: none;
-            padding: calc(36 / 16 * 1rem) 0;
             /* prevent flexbox from squishing it */
             flex: none;
         }
 
         .cs-li-link {
-            font-size: calc(16 / 16 * 1rem);
+            /* 14px - 16px */
+            font-size: clamp(.875rem, 1vw, 1rem);
             line-height: 1.5em;
-            text-transform: uppercase;
             text-decoration: none;
             margin: 0;
-            color: var(--bodyTextColorWhite);
+            color: var(--bodyTextColor);
             display: block;
             position: relative;
-            transition: color 0.3s;
-
             &:hover {
-                color: var(--primary);
-            }
-
-            &.cs-active {
-                font-weight: 700;
-                color: var(--primary);
-            }
-        }
-
-        .cs-call {
-            text-decoration: none;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            position: relative;
-            transform-style: preserve-3d;
-            perspective: 200px;
-            gap: calc(16 / 16 * 1rem);
-
-            &:hover {
-                &:hover {
-                    .cs-wrapper {
-                        transform: rotateY(180deg);
-                    }
+                &:before {
+                    width: 100%;
                 }
             }
 
-            .cs-wrapper {
-                width: calc(56 / 16 * 1rem);
-                height: calc(56 / 16 * 1rem);
-                background-color: var(--primary);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transition: transform 0.6s;
-                /* prevents flexbox from squishing it */
-                flex: none;
+            &.cs-active {
+                &:before {
+                    width: 100%;
+                }
             }
 
-            .cs-icon {
-                width: calc(24 / 16 * 1rem);
-                height: auto;
+            &:before {
+                /* active state underline */
+                content: '';
+                width: 0%;
+                height: 2px;
+                background: var(--primary);
+                opacity: 1;
+                position: absolute;
                 display: block;
-                transition: transform 0.3s;
-            }
-
-            .cs-info {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .cs-header {
-                font-size: calc(14 / 16 * 1rem);
-                font-weight: 400;
-                line-height: 1.2em;
-                margin: 0;
-                color: var(--bodyTextColorWhite);
-                display: block;
-            }
-
-            .cs-link-content {
-                font-size: calc(20 / 16 * 1rem);
-                font-weight: 700;
-                line-height: 1.2em;
-                margin: 0;
-                color: var(--bodyTextColorWhite);
-                display: block;
+                bottom: calc(0 / 16 * 1rem);
+                left: 0;
+                transition: width .3s;
             }
         }
-    }
-}
 
-/* Large Desktop - 1300px */
-@media only screen and (min-width: 75rem) {
-    #cs-navigation {
-        .cs-contact-link {
-            &:nth-of-type(2) {
-                display: flex;
-            }
-        }
-    }
-}
-
-/* Larger Desktop - 1200px */
-@media only screen and (min-width: 100rem) {
-    #cs-navigation {
-        .cs-donate {
-            margin-left: auto;
-            display: flex;
-        }
-
-        .cs-nav-button {
+        .cs-button-solid {
+            font-size: calc(16 / 16 * 1rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875em, 5.5vw, 3.5em);
+            text-decoration: none;
+	    	font-weight: 700;
+	        text-align: center;
             margin: 0;
+            color: #fff;
+            min-width: calc(150 / 16 * 1rem);
+            padding: 0 calc(24 / 16 * 1rem);
+            background-color: var(--primary);
+            border-radius: calc(4 / 16 * 1rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: calc(4 / 16 * 1rem);
+                transition: width .3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
         }
     }
 }
+                                
                                 
                                 
                                 
@@ -1634,4 +1181,3 @@
         }
     }
 }
-                                

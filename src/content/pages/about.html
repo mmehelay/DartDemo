@@ -8,68 +8,173 @@ eleventyNavigation:
     order: 200
 ---
 
-{% extends "layouts/base.html" %}
+{% extends "layouts/base2.html" %}
 
 {% block head %}
     <link rel="stylesheet" href="/css/about.css">
 {% endblock %}
 
 {% block body %}
-    <!-- ============================================ -->
-    <!--                    LANDING                   -->
-    <!-- ============================================ -->
 
-    <section id="int-hero">
-        <h1 id="home-h">About Us</h1>
-        <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
-        </picture>
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
 
-    </section>
-
-    <!-- ============================================ -->
-    <!--                 Side By Side                 -->
-    <!-- ============================================ -->
-
-    <section id="sbs">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-left">
-                <picture class="cs-picture cs-picture1">
-                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="563">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="563">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-right">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">About Company Title</h2>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <div class="cs-flex-group">
-                    <p class="cs-flex-p">
-                        In consequat tincidunt turpis sit amet imperdiet. Praesent Classei consequat tincidunt turpis sit amet imperdiet for mind.
-                    </p>
-                    <span class="cs-name">Justin Time</span>
-                    <span class="cs-job">CEO-Founder</span>
-                    <img class="cs-quote-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg" alt="gavel" width="136" height="77">
-                </div>
-                <a href="/projects" class="cs-button-solid">Our Projects</a>
-            </div>
+<div id="banner-310">
+    <div class="cs-container">
+        <span class="cs-int-title">About Us</span>
+        <div class="cs-breadcrumbs">
+            <a href="" class="cs-link">Home</a>
+            <a href="" class="cs-link cs-active">About Us</a>
         </div>
-    </section>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="/assets/images/About1.jpg">
+        <source media="(min-width: 601px)" srcset="/assets/images/About1.jpg">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/About1.jpg" alt="library" width="1920" height="375">
+    </picture>
+</div>
+                                
+
+
+<!-- ============================================ -->
+<!--                Side By Side                  -->
+<!-- ============================================ -->
+
+<section id="sbs-1255">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <picture class="cs-picture cs-picture1">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building1.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building1.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building1.jpg" alt="building" width="203" height="203">
+            </picture>
+            <picture class="cs-picture cs-picture2">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building2.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building2.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building2.jpg" alt="building" width="207" height="207">
+            </picture>
+            <picture class="cs-picture cs-picture3">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building3.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building3.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building3.jpg" alt="building" width="214" height="214">
+            </picture>
+            <picture class="cs-picture cs-picture4">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building4.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building4.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building4.jpg" alt="building" width="223" height="223">
+            </picture>
+            <picture class="cs-picture cs-picture5">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building5.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building5.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building5.jpg" alt="building" width="287" height="287">
+            </picture>
+            <picture class="cs-picture cs-picture6">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building6.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building6.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building6.jpg" alt="building" width="203" height="203">
+            </picture>
+            <picture class="cs-picture cs-picture7">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building7.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building7.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building7.jpg" alt="building" width="204" height="204">
+            </picture>
+            <picture class="cs-picture cs-picture8">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building8.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building8.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building8.jpg" alt="building" width="223" height="223">
+            </picture>
+            <!--Stripe background-->
+            <picture class="cs-waves-wrapper">
+                <img class="cs-waves" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/svg-waves.svg" alt="stripes" width="650" height="933" aria-hidden="true">
+            </picture>
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Why choose us</span>
+            <h2 class="cs-title">Delivering high-quality workmanship</h2>
+            <p class="cs-text">
+                Welcome to Dart Demolition, a dynamic and innovative leader in the fields of demolition, cleanup, and asbestos solutions. We are much more than just a company; we are your trusted partner in turning your vision into reality. Our unwavering commitment to excellence, safety, and sustainability has made us the go-to choice for clients across diverse industries.  </p>
+                  <p class="cs-text">Our journey is driven by a compelling vision and mission. We envision a world where spaces are transformed efficiently, safely, and sustainably. Our mission is to lead this transformation, making a lasting, positive impact on communities and businesses alike.
+
+            </p>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <img class="cs-li-img" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="icon" width="24" height="24" aria-hidden="true">
+                    Demolition
+                </li>
+                <li class="cs-li">
+                    <img class="cs-li-img" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="icon" width="24" height="24" aria-hidden="true">
+                    Cleanup
+                </li>
+                <li class="cs-li">
+                    <img class="cs-li-img" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="icon" width="24" height="24" aria-hidden="true">
+                   Consulting
+                </li>
+            </ul>
+            <a href="" class="cs-button-solid">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                 Side By Side                 -->
+<!-- ============================================ -->
+
+<section id="sbs-297">
+    <div class="cs-container">
+        <!-- Left Image Section -->
+        <div class="cs-image-group">
+            <!--Floating Box-->
+            <div class="cs-box">
+                <span class="cs-number">14</span>
+                <span class="cs-desc">years of practicing</span>
+                <!--Background image for cs-box-->
+                <picture class="cs-box-picture">
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/justice-m.jpg">
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/justice.jpg">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/justice.jpg" alt="greek pillars" width="521" height="672" aria-hidden="true">
+                </picture>
+            </div>
+            <!--Big Background Image-->
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="/assets/images/About2.jpg">
+                <source media="(min-width: 601px)" srcset="/assets/images/About2.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/About2.jpg" alt="greek pillars" width="521" height="672" aria-hidden="true">
+            </picture>
+        </div>
+        <!-- Right Content Section-->
+        <div class="cs-content">
+            <span class="cs-topper">Who We Are</span>
+            <h2 class="cs-title">Good People, Great Results</h2>
+            <p class="cs-text">
+               At Dart Demolition, we are more than our services. We are a team of dedicated professionals, each with a unique set of skills and expertise, all united by a shared passion for delivering exceptional results. With years of experience under our belt, we have successfully executed projects of all sizes and complexities.
+            </p>
+            <p class="cs-text">Call to ask any question: <a class="cs-link" href="tel:">(555) 455-4555</a></p>
+            <a class="cs-button-solid" aria-label="learn more about our programs" href="">Learn More</a>
+        </div>
+    </div>
+</section>
+                                
+                                
+                                
+                                
 
     {% include 'components/cta.html' %}
 
