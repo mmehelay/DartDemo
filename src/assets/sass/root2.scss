@@ -9,7 +9,7 @@
 	// Website colors
 	:root {
 		/* remove this whole :root and put in your global css file that's shared on all pages, then just remove this section from all other Stitches you add later, only need this once in your global stylesheet */
-		--primary: #e5572c;
+		--primary: #2587be;
 		--primaryLight: #001f3f;
 		--secondary: #ffba43;
 		--secondaryLight: #ffba43;
@@ -34,7 +34,7 @@
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		font-weight: 700;
-		color: var(--secondary);
+		color: var(--primary);
 		display: block;
 	}
 
