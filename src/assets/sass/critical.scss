@@ -13,6 +13,26 @@
         position: relative;
         z-index: 10;
 
+        .cs-button-wrapper {
+            display: flex;
+            justify-content: center;  // Horizontally center the button within the wrapper
+            align-items: center;      // Vertically center, if needed
+            margin-top: 2rem;         // Optional margin for spacing
+          }
+        
+          .cs-button-solid2 {
+            font-size: calc(16 / 16 * 1rem);
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            color: #fff;
+            padding: 0 calc(24 / 16 * 1rem);
+            background-color: var(--primary);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+          }
         .cs-background {
             width: 100%;
             height: 55%;
