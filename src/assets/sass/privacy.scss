@@ -1,0 +1,48 @@
+
+.container {
+    padding: 120px;
+
+    display: inline-block;  // The width will be adjusted based on the content
+    max-width: 100%;  // Prevents content from being too narrow on mobile
+    width: auto;     // Dynamic width based on content size
+    text-align: center;  // Center align text within container
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 1.8rem;
+
+    // Larger font size for bigger screens
+    @media (min-width: 768px) {
+        font-size: 2.5rem;
+    }
+}
+
+p {
+    line-height: 1.6;
+    color: #666;
+    font-size: 1rem;
+
+    // Larger font size for bigger screens
+    @media (min-width: 768px) {
+        font-size: 1.2rem;
+    }
+}
+
+// Mobile adjustments
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        max-width: 100%;  // Allow full width usage on smaller screens
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+
